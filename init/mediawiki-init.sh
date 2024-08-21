@@ -14,6 +14,10 @@ DATA_SITE_ROOT_DIR=${DATA_DIR}/site_root
 MYSQL_DATA=${DATA_DIR}/mysql
 WG_CACHE_DIR=/dev/shm/mw
 
+SQLITE_SCRIPT_FILE=/var/www/html/w/maintenance/sqlite/tables-generated.sql
+
+
+
 if [ -z "$URL" ] ; then
   WGSERVER="WebRequest::detectServer();"
   WGCANONICALSERVER="http://localhost"
@@ -113,7 +117,7 @@ then
     sqlite3 ${DATABASE_FILE} "VACUUM;"
     echo "  > Initialize tables from ${SQLITE_SCRIPT_FILE}"
     # Initialize tables
-    #sqlite3 -init ${SQLITE_SCRIPT_FILE} ${DATABASE_FILE}
+    sqlite3 ${DATABASE_FILE} < ${SQLITE_SCRIPT_FILE}
   fi
   # Allow to write on database
   echo "  > Setting permissions"
@@ -222,7 +226,7 @@ fi
 
 # Set the secret token to download datadir
 echo "> Setting secret export token"
-sed -i s/?ACCESS_TOKEN?/$EXPORT_TOKEN/g ./export_data.php
+sed -i s/?ACCESS_TOKEN?/$EXPORT_TOKEN/g ../export_data.php
 
 # Fix latence problem
 echo "> Removing locks"

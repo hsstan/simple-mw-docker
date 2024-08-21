@@ -160,6 +160,8 @@ COPY ./init/handle-htpassword-opt.sh \
      # to
      /usr/local/bin/
 
+COPY ./init/export_data.php ../
+
 RUN chmod a+x /usr/local/bin/*.sh
 
 ENTRYPOINT ["start.sh"]
