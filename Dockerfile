@@ -2,7 +2,7 @@
 FROM nginx:1.27.0
 
 LABEL maintainer="hsstan"
-LABEL org.opencontainers.image.source=https://github.com/hsstan/simple-mw-docker
+LABEL org.opencontainers.image.source = "https://github.com/hsstan/simple-mw-docker"
 
 #######################
 # ENVIRONNEMENT SETUP #
