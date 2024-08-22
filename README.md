@@ -2,7 +2,7 @@
 
 this repo offers a straight forward solution to deploy a Mediawiki within only one Docker container
 
-**Note**: this repo is a clone of [https://github.com/offspot/mediawiki-docker](https://github.com/offspot/mediawiki-docker), that is stuck at Medaiwiki 1.36
+**Note**: this repo is a clone of [https://github.com/offspot/mediawiki-docker](https://github.com/offspot/mediawiki-docker), that is stuck at Mediawiki 1.36
 
 [![CodeFactor](https://www.codefactor.io/repository/github/hsstan/simple-mw-docker/badge/main)](https://www.codefactor.io/repository/github/hsstan/simple-mw-docker/overview/main)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
